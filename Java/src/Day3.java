@@ -1,6 +1,8 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -39,7 +41,7 @@ public class Day3 {
     }
     */
     
-    
+    /*
     //IO 실습
     
     FileInputStream fs = null;
@@ -65,7 +67,64 @@ public class Day3 {
         e.printStackTrace();
       }
     }   
+    */
+    /*
+    //IO 실습2
     
+    FileInputStream fs = null;
+    FileOutputStream fos = null;
+    
+    try {
+      
+      fs = new FileInputStream("C:\\Temp\\cat.jpg");
+      fos = new FileOutputStream("C:\\Temp\\copyCat.jpg");
+      
+      while(fs.read()!=-1) {
+        fos.write(fs.read());
+      }
+      
+    } catch(Exception e) {
+      
+    } finally {
+      try {
+        fs.close();
+        fos.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
+      System.out.println("끝");
+    }
+*/
+    
+    String path = System.getProperty("user.dir");
+    System.out.println("Working Directory = " + path);
+    
+    
+    FileReader fr = null;
+    FileWriter fw = null;
+    
+    try {
+      
+      fr = new FileReader("C:\\Users\\soya\\eclipse-workspace\\Summing-up\\Java\\src\\Day3.java");
+      fw = new FileWriter("C:\\Temp\\copyJava.txt");
+      
+      while(fr.read()!=-1) {
+        fw.write(fr.read());
+      }
+      
+    } catch (Exception e) {
+      e.printStackTrace();
+    } finally {
+      
+      try {
+        fr.close();
+        fw.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      
+    }
 
   }
 }
