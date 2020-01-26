@@ -25,6 +25,14 @@ public class Day2 {
         sum += Integer.parseInt(backJumin.substring(i, i + 1));
       }
       
+      System.out.println("주민번호 뒷자리 첫번째: "+jumin.substring(num+1,num+2));
+      
+      if(Integer.parseInt(jumin.substring(num+1,num+2)) == (1|3)) {
+        System.out.println("남자입니다");
+      }else if(Integer.parseInt(jumin.substring(num+1,num+2)) == (2|4)){
+        System.out.println("숙녀분입니다");
+        }
+      
       System.out.println("주민등록번호의 합:"+sum);
     }else{
       System.out.println("잘못 입력하심..ㅡㅡ");
