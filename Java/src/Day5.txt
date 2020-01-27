@@ -1,0 +1,6 @@
+Vanilla javascript
+1.variable
+Create-> Initialize -> Use
+                I+U 동시에..
+2.let
+why use this?
