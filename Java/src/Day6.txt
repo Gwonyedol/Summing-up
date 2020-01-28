@@ -1,0 +1,12 @@
+vanilla J.S
+1. let : 변수
+2. const : 상수, 리터럴이 변하지 않음
+3. Array : []
+4. Object : {} -> Property와 값이 들어감
+Array속에 Object가 들어갈 수도 있고
+그 반대도 가능하다
+5.function 함수명 (argument)) {}
+이때 매개변수엔 그냥 이름만 넣으면
+ex) function fruit (type) {}
+그 안에는 모든 변수나 string,number가
+들어갈 수 있음

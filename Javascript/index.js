@@ -33,7 +33,7 @@ console.log(daysOfWeek);
 console.log(daysOfWeek[22]);
 */
 
-
+/*
 //Object
 const yedolInfo = {
     name:"yedol",
@@ -47,3 +47,46 @@ const yedolInfo = {
 }
 yedolInfo.age="10";
 console.log(yedolInfo);
+*/
+//console.log(console);
+
+//function is function
+//한 코드의 조각으로 네가 원하는만큼 쓸 수있는 코드
+//console.log("hello");
+/*
+function speak(name,age) {
+    console.log("hi",name,"you have",age);
+}
+
+speak("예돌",123);
+*/
+//argument 매개변수는 우리가 주는 값이고 그걸 저장할것이다
+
+
+/*
+function sayHello(name,age){
+    console.log(`Hello ${name} you are ${age} years old`);
+}
+
+const greetYedol = sayHello("예돌",9);
+
+console.log();
+*/
+//변수와 네가 적고자하는 string을 섞기위해?
+/*
+function sayHello(name,age){
+    return `Hello ${name} you are ${age} years old`;
+}
+
+const greetYedol = sayHello("예돌",9);
+console.log(greetYedol);
+*/
+
+const calculator = {
+    plus: function (a,b) {
+        return a+b;
+    }
+}
+
+const plus = calculator.plus(5,10);
+console.log(plus);
