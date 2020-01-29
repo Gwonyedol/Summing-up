@@ -17,3 +17,6 @@ JSP
 프로토콜://컴퓨터주소:port/information p
 2.서블렛 맛보기
 web.xml or 어노테이션을 이용한 방법
+3.get,post방식
+get:url값으로 정보가 전송
+post:header를 이용해 정보가전송
