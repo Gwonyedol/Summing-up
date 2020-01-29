@@ -1,0 +1,16 @@
+.js-clock {
+    color:#34495e;
+    font-size: 2em;
+}
+
+
+body {
+    background-color:#ecf0f1;
+}
+.form, .greetings {
+    display: none;
+}
+
+.showing {
+    display: block;
+}
