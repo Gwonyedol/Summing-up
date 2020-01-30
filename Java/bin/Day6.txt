@@ -14,7 +14,13 @@ ex) function fruit (type) {}
 
 JSP
 1.웹 프로그래밍이란, 웹어플리케이션을 구현하는 행위
-프로토콜://컴퓨터주소:port/information p
+프로토콜://컴퓨터주소:port/information port
+프로토콜: 네트워크상에서 통신규약(요청약속)
+DNS: 컴퓨터주소( IP주소를 인간이 외우기 쉽게 매핑한 문자열 )
+port: 프로그램을 구분할수있는 번호
+
+JSP(java server page): html 파일내에 java언어를 삽입한 문서
+sevlet: java 언어로 이루어진 웹프로그래밍 문서
 2.서블렛 맛보기
 web.xml or 어노테이션을 이용한 방법
 3.get,post방식

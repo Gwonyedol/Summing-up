@@ -7,11 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>hello</h1>
-
 <%
-out.println(request.getServerName());
+String str = request.getParameter("age");
+int age = Integer.parseInt(str);
 %>
+
+나이가 <%= age %>군요.
+미성년자는
+돌아가세요ㅡㅡ
+
 
 </body>
 </html>

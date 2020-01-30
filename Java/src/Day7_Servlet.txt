@@ -5,7 +5,7 @@
 :서블렛은 최초 요청시 객체가 만들어져 메모리에 로딩되고, 이후 요청시에는 기존의 객체를 재활용 따라서 동작속도 빠름
 서블렛 객체생성->init():최초한번->doGet(),doPost()->destroy()
 
-ㅁhtml 폼태그
+ㅁhtml 폼태그의 input
 type: 태그종류 지정 (text,password,submit..)
 name: input 태그 이름 -> 서버에 전송할떄 이 이름을 쓴다
 value: name에 해당하는 값 -> 서버에 전송되는 value값
@@ -60,3 +60,10 @@ context parameter를 통해 web.xml에 기술하고 여러 서블렛에서 공�
 클라이언트가 웹브라우저로 hello.jsp를 요청하게되면
 jsp컨테이너가 jsp파일을 java로 변환함
 변환된 파일은 다시 class로 변환되고 클라이언트에게 html형식응로 응답됨
+
+ㅁrequest,response 객체의 이해
+request: 웹브라우저를 통해 서버에 어떤 정보를 요청하는것
+요청정보는 request객체가 관리
+
+ㅁresponse: 웹브라우저의 요청에 응답하는것
+응답정보는 response 객체가 관리

@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>hello</h1>
 
-<%
-out.println(request.getServerName());
-%>
+<jsp:forward page="f02.jsp">
+	<jsp:param value="yedol" name="id"/>
+	<jsp:param value="1234" name="pw"/>
+</jsp:forward>
+
+
 
 </body>
 </html>

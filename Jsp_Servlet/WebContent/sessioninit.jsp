@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>hello</h1>
-
-<%
-out.println(request.getServerName());
-%>
-
+	<%
+	
+		session.setAttribute("myname", "myvalue");
+		session.setAttribute("yedol", 9);
+	%>
+	<a href="sessionget.jsp">session get</a>
 </body>
 </html>

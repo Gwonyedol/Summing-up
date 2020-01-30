@@ -4,14 +4,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>formex result</title>
 </head>
 <body>
-<h1>hello</h1>
-
-<%
-out.println(request.getServerName());
+<%!
+String name;
+String id;
 %>
+<%
+name=request.getParameter("name");
+id=request.getParameter("id");
+
+%>
+
+이름:<%=name%>
+아이디:<%=id %>
 
 </body>
 </html>

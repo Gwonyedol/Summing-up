@@ -11,7 +11,8 @@ function getTime() {
 }
 
 const form = document.querySelector(".js-form")
-const input = form.querySelector("form")
+const input = form.querySelector("input")
+
 
 const greeting = document.querySelector(".js-greetings");
 
@@ -23,12 +24,33 @@ const SHOWING = "showing";
 function paintGreeting(text){
     greeting.classList.remove(SHOWING);
     greeting.classList.add(SHOWING);
+    form.classList.remove(SHOWING);
     greeting.innerText = `Hello ${text}`
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    console.log(input.value);
+    paintGreeting(input.value);
+    saveName(input.value);
+    // paintGreeting(currentValue);
+    
+}
+
+function saveName(text){
+    localStorage.setItem(USER_LS,text);
+}
+
+
+function askForName() {
+    form.classList.add(SHOWING);
+    form.addEventListener("submit",handleSubmit);
 }
 
 function loadName(){
     const currentUser = localStorage.getItem(USER_LS);
     if(currentUser === null){
+        askForName();
     }else{
         paintGreeting(currentUser);
     }

@@ -1,0 +1,52 @@
+ㅁJSP 액션태그
+
+1.forward
+현재페이지에서 다른 특정 페이지로 전환할때 사용합니다
+url은 변하지않고 페이지 안에서만 변한다
+<jsp:forward page ="sss.jsp"/>
+respons.sendRedirect("hi.jsp");
+
+2.include
+현재 페이지에 다른 페이지를 삽입할때 사용
+<jsp:include page ="aaa.jsp"/>
+
+3.parma
+foward 및 include 태그에 데이터 전달을 목적으로 사용되는 태그이다.
+이름과 값으로 이루어져있다
+
+home.html
+<jsp:forward page="hi.jsp">
+	<jsp:param name="id" value="hi"/>
+</jsp:forward>
+
+hi.jsp
+<%! String id; %>
+<% id=request.getParameter("id"); %>
+아이디:<%=id%>
+
+
+
+ㅁ쿠키 Cookies
+1.쿠키란?
+웹브라우저의 응답후 관계를 끊는것은 http프로토콜의 특징이다.
+연결이 끊겼을때 어떤 정보를 지속적으로 유지하기 위한 수단으로 [쿠키]를 사용한다
+쿠키는 서버에서 생성하고 클라이언트측에 특정정보를 저장한다.
+
+2.
+Cookie cookie = new Cookie("cookieN", "cookeV");
+cookie.setMaxAge(60*60); 
+response.addCookie(cookie);
+쿠키를 생성하면
+response.addCookie를 통해서 꼭 추가해줘야함!
+
+
+ㅁ세션 Session
+1.세션이란?
+서버와 관계를 유지하기 위한 수단이다. (쿠키와 비슷)
+서버상에 객체로 존재해서 서버에서만 접근이 가능하다. 보안이 좋음
+브라우저 하나당 세션아이디를 하나씩 만들어줌
+클라이언트 요청 -> 세션 자동 생성 -> 세션 속성 설정(내부객체 메소드 이용)
+
+
+2.
+setAttribute() : 세션ㅇ네 데이터를 저장합니다.
