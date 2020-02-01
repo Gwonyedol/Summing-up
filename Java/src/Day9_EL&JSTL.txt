@@ -1,0 +1,49 @@
+1.EL(Expressiong Language)
+ㅁEl이란?
+JSP 표현식 또는 액션태그를 대신해서 값을 표현하는 언어
+<%= value %>  --->   ${value}
+
+ㅁ액션태그로 사용되는 EL
+<jsp:getProperty name="member" propery="name"/>  --->  ${member.name}
+
+ㅁ내장객체
+pageScope : page객체를 참조하는 객체
+requestScope : request 객체를 참조하는객체
+sessionScope
+applicationScope
+
+ㅁ활용
+<% String id = request.getParameter("id"); %>
+<%= id%>   --->   ${param.id}
+
+ㅁcontext초기화 파라미터
+<context-param>
+<param-name>a</>
+<param-value>value</>
+</>
+
+${initParam.a}
+
+
+
+
+
+2.JSTL(JSP standard Tag Library)
+ㅁ설치 및 개요
+jakarta에서 1.1.2버전을 다운로드 받고 lib폴더에서 jstl.jar, standard.jar를 
+아파치의 라이브러리에 넣어준다
+
+ㅁcore
+core라이브러리는 기본적인 라이브러리로 출력,제어문,반복문같은 기능을 포함하고있습니다
+<%@ taglib uri=http://java.sun.com/jsp/jstl/core prefix="c" %>
+
+출력태그:<c:out value="출력값" ...>
+변수설정 태그:<c:set var="변수명" value="설정값" ... >
+변수제거 태그:<c:remove var="변수명" ..>
+예외처리 태그:<c:catch ..>
+조건문 태그:<c:if test="조건"..>
+제어문(switch) 태그:<c:choose>
+<c:when test="조건> 내용</>
+<c:ohterwise>내용</>
+</>
+반복문(for) 태그:<c:forEach items="객체명" ..>

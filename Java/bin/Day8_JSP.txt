@@ -1,0 +1,103 @@
+ㅁJSP 액션태그
+
+1.forward
+현재페이지에서 다른 특정 페이지로 전환할때 사용합니다
+url은 변하지않고 페이지 안에서만 변한다
+<jsp:forward page ="sss.jsp"/>
+respons.sendRedirect("hi.jsp");
+
+2.include
+현재 페이지에 다른 페이지를 삽입할때 사용
+<jsp:include page ="aaa.jsp"/>
+
+3.parma
+foward 및 include 태그에 데이터 전달을 목적으로 사용되는 태그이다.
+이름과 값으로 이루어져있다
+
+home.html
+<jsp:forward page="hi.jsp">
+	<jsp:param name="id" value="hi"/>
+</jsp:forward>
+
+hi.jsp
+<%! String id; %>
+<% id=request.getParameter("id"); %>
+아이디:<%=id%>
+
+
+
+ㅁ쿠키 Cookies
+1.쿠키란?
+웹브라우저의 응답후 관계를 끊는것은 http프로토콜의 특징이다.
+연결이 끊겼을때 어떤 정보를 지속적으로 유지하기 위한 수단으로 [쿠키]를 사용한다
+쿠키는 서버에서 생성하고 클라이언트측에 특정정보를 저장한다.
+
+2.
+Cookie cookie = new Cookie("cookieN", "cookeV");
+cookie.setMaxAge(60*60); 
+response.addCookie(cookie);
+쿠키를 생성하면
+response.addCookie를 통해서 꼭 추가해줘야함!
+
+
+ㅁ세션 Session
+1.세션이란?
+서버와 관계를 유지하기 위한 수단이다. (쿠키와 비슷)
+서버상에 객체로 존재해서 서버에서만 접근이 가능하다. 보안이 좋음
+브라우저 하나당 세션아이디를 하나씩 만들어줌
+클라이언트 요청 -> 세션 자동 생성 -> 세션 속성 설정(내부객체 메소드 이용)
+
+
+2.
+setAttribute() : 세션에 데이터를 저장합니다.
+getAttribute() : 세션에서 데이터를 불러온다
+
+ㅁ예외페이지
+1.지시자를 이용한 예외처림
+home.html
+<%@ page errorPage="errorpage.jsp%>
+
+errorPage.jsp
+<%@ page isErrorPage="true"%>
+<% response.setStatus(200); %> ->에러페이지 자체는 정상이라는 표시
+
+<%= exception.getMessage() %> -> 에러 발생이유 찍어줌
+
+2.web.xml을 이용한 예외처리
+
+<error-page>
+	<error-code>404</error-page>
+	<location>/error404.jsp</location>
+</error-page>
+
+ㅁ자바 빈
+1.빈이란?
+반복적인 작업을 효율적으로 하기위해서 사용한다.
+데이터(속성) 기능(메소드)로 이루어진 클래스입니다.
+jsp페이지를 만들고 액션태그로 빈을 사용한다.
+
+2.사용법
+데이터를 업데이트하고 얻어오는 역할을함
+-useBean
+<jsp:useBean id="student" class="com.javalec.ex.Student" scope="page"/>
+스코프(범위):page, request.session, application
+
+-setProperty
+<jsp:setProperty name="student" property="name" value="홍길동"/>
+name빈의 property에 value를 넣겠다
+
+ㅁ데이터베이스 JDBC
+JAVA프로그램에서 SQL문을 실행하여 데이터를 관리하기위한 java api입니다.
+오라클을 깔면 자동으로 설치되고 해당클래스파일을 복사해서 쓰면됨
+
+1.데이터베이스 연결순서
+JDBC드라이버로드: 메모리에 로드됩니다
+Class.forName("oracle.jdbc.driver.OracleDriver");
+데이터베이스 연결 : 커넥션 객체 생성
+DriverManager.getConnection(JDBC UTL,계정아이디,비밀번호);
+SQL문실행: statment객체를 통해 sql문이 실행됨
+connection.createStatement();
+데이터베이스 연결해지: resultset객체로 받음
+statement.executeQuery(); ->여러개의 결과값이 생기는 경우
+statement.executeUpdate(); ->테이블의 내용만 변경되는 경우
+
