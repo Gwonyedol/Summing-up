@@ -10,7 +10,7 @@ jsp와 servlet 페이지내에 로직을 기술할수 있지만 코드의모듈�
 ㅁPreparedStatement
 Statement객체는 중복코드가 많다는 단점이있다. 이러한 단점을 보완한 객체이다
 
-String query = "insert inro member (id,pw,name,phone) values(?,?,?,?)";
+String query = "insert into member (id,pw,name,phone) values(?,?,?,?)";
 preparedStatement = connection.preparedStatement(query);
 preparedStatement.setString(1,"아이디");
 preparedStatement.setString(2,"12345"); ........

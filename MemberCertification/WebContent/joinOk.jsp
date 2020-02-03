@@ -12,7 +12,7 @@
 %>
 		<script language="javascript">
 			alert("아이디가 이미 존재 합니다.");
-			history.back();
+			history.back(); /* 뒤페이지로 가게하기;; */
 		</script>
 <%
 		} else {

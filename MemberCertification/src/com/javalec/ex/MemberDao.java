@@ -27,6 +27,22 @@ public class MemberDao {
 		return instance;
 	}
 	
+	private Connection getConnection() {
+		
+		Context context = null;
+		DataSource dataSource = null;
+		Connection connection = null;
+		try {
+			context = new InitialContext();
+			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
+			connection = dataSource.getConnection();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return connection;
+	}
+	
 	public int insertMember(MemberDto dto) {
 		int ri = 0;
 		
@@ -110,12 +126,12 @@ public class MemberDao {
 			if(set.next()) {
 				dbPw = set.getString("pw");
 				if(dbPw.equals(pw)) {
-					ri = MemberDao.MEMBER_LOGIN_SUCCESS;				// ·Î±×ÀÎ Ok
+					ri = MemberDao.MEMBER_LOGIN_SUCCESS;				// ï¿½Î±ï¿½ï¿½ï¿½ Ok
 				} else {
-					ri = MemberDao.MEMBER_LOGIN_PW_NO_GOOD;		// ºñ¹ø X
+					ri = MemberDao.MEMBER_LOGIN_PW_NO_GOOD;		// ï¿½ï¿½ï¿½ X
 				}
 			} else {
-				ri = MemberDao.MEMBER_LOGIN_IS_NOT;		// È¸¿ø X	
+				ri = MemberDao.MEMBER_LOGIN_IS_NOT;		// È¸ï¿½ï¿½ X	
 			}
 			
 		} catch (Exception e) {
@@ -199,20 +215,6 @@ public class MemberDao {
 		return ri;
 	}
 	
-	private Connection getConnection() {
-		
-		Context context = null;
-		DataSource dataSource = null;
-		Connection connection = null;
-		try {
-			context = new InitialContext();
-			dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
-			connection = dataSource.getConnection();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return connection;
-	}
+
 	
 }

@@ -1,4 +1,4 @@
-1.EL(Expressiong Language)
+1.EL(Expressing Language)
 ㅁEl이란?
 JSP 표현식 또는 액션태그를 대신해서 값을 표현하는 언어
 <%= value %>  --->   ${value}
