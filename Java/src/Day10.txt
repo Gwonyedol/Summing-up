@@ -1,0 +1,18 @@
+ㅁFrontController패턴과 Command패턴
+1.url-pattern
+디렉터리 패턴:
+http://localhost:8080/jsphome/Hello -> /Hello 서블릿
+http://localhost:8080/jsphome/World -> /World 서블릿
+확장자 패턴:
+http://localhost:8080/jsphome/hello.do -> *.do서블릿
+http://localhost:8080/jsphome/world.do -> *.do서블릿
+
+ㅁ포워딩(Forwarding)
+서블릿 또는 jsp에서 요청을 받은후 다른 콤포넌트로 요청을 위임할 수 있다(forwarding)
+1.RequestDispatcher
+요청객체를 위임하는 컴포넌트에 동일하게 전달할 수 있다
+
+ㅁMVC패턴을 이용한 게시판 만들기
+Model: 데이터베이스와 관계
+View: 사용자에게 보여지는 UI화면 주로 jsp파일이다
+Controller: 클라이언트의 요청을 받고 작업을 분할해줌..
